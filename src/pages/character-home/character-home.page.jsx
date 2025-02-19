@@ -1,20 +1,24 @@
-import "./styles.css";
-import useCharacters from "../../hooks/useCharacters";
-import useSearch from "../../hooks/useSearch";
-import Search from "../../components/search/Search";
-import CharacterCard from "../../components/character-card/CharacterCard";
-import Pagination from "../../components/pagination/Pagination";
+import React from "react";
+import "./character-home.styles.css";
+import useCharacters from "../../hooks/useCharacters.hook";
+import useSearch from "../../hooks/useSearch.hook";
+import Search from "../../components/search/search.component";
+import CharacterCard from "../../components/character-card/character-card.component";
+import Pagination from "../../components/pagination/pagination.component";
 
-function CharacterHome({ likedCharacters, handleLike }) {
+function CharacterHome({ likedCharacters, handleLike, showFavorites }) {
   const { characters, loading, page, totalPages, nextPage, prevPage } =
-    useCharacters(1, 10);
+    useCharacters(1, 50);
+
+  const sourceCharacters = showFavorites ? likedCharacters : characters;
   const { searchTerm, setSearchTerm, filteredCharacters } =
-    useSearch(characters);
-    
-  if (loading) return <p className="loading">Cargando personajes...</p>;
+    useSearch(sourceCharacters);
+
+  if (loading) return <p className="loading">🔄 Cargando personajes...</p>;
 
   return (
     <div className="character-home">
+      {showFavorites && <h1>FAVORITOS</h1>}
       <Search
         searchTerm={searchTerm}
         handleSearch={setSearchTerm}
@@ -37,14 +41,14 @@ function CharacterHome({ likedCharacters, handleLike }) {
           );
         })}
       </div>
-      {filteredCharacters.length ? (
+      {filteredCharacters.length > 0 && !showFavorites && (
         <Pagination
           page={page}
           totalPages={totalPages}
           onNext={nextPage}
           onPrev={prevPage}
         />
-      ) : null}
+      )}
     </div>
   );
 }

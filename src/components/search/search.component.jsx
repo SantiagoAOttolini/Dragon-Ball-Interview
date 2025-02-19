@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./search.styles.css";
 
 function Search({ searchTerm, handleSearch, resultsCount }) {
   return (
@@ -8,7 +8,7 @@ function Search({ searchTerm, handleSearch, resultsCount }) {
         type="text"
         value={searchTerm}
         onChange={(e) => handleSearch(e.target.value)}
-        placeholder="🔍 Buscar personaje por nombre..."
+        placeholder="SEARCH A CHARACTER"
         className="search-input"
       />
       {resultsCount !== 0 && (

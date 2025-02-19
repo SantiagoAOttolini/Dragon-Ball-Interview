@@ -1,4 +1,5 @@
-import './styles.css';
+import React from "react";
+import "./pagination.styles.css";
 
 function Pagination({ page, totalPages, onNext, onPrev }) {
   return (

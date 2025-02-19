@@ -1,32 +1,26 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import CharacterHome from './pages/character-home/CharacterHome';
-import CharacterDetail from './pages/character-detail/CharacterDetail';
-import Header from './components/header/Header';
-import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import CharacterHome from "./pages/character-home/character-home.page";
+import CharacterDetail from "./pages/character-detail/character-detail.page";
+import Header from "./components/header/header.component";
+import useLike from "./hooks/useLike.hook";
 
 function App() {
-  const [likedCharacters, setLikedCharacters] = useState(() => {
-    const savedLikes = JSON.parse(localStorage.getItem('likedCharacters'));
-    return savedLikes || [];
-  });
-
-  // Guardar cambios en localStorage
-  useEffect(() => {
-    localStorage.setItem('likedCharacters', JSON.stringify(likedCharacters));
-  }, [likedCharacters]);
-
-  const handleLike = (character) => {
-    setLikedCharacters((prev) => {
-      const isLiked = prev.some((liked) => liked.id === character.id);
-      return isLiked
-        ? prev.filter((liked) => liked.id !== character.id)
-        : [...prev, character];
-    });
-  };
+  const {
+    likedCharacters,
+    handleLike,
+    likedCount,
+    showFavorites,
+    handleToggleFavorites,
+    handleResetCharacters,
+  } = useLike();
 
   return (
     <Router>
-      <Header likedCount={likedCharacters.length} />
+      <Header
+        likedCount={likedCount}
+        onToggleFavorites={handleToggleFavorites}
+        onResetCharacters={handleResetCharacters}
+      />
       <Routes>
         <Route
           path="/"
@@ -34,18 +28,11 @@ function App() {
             <CharacterHome
               likedCharacters={likedCharacters}
               handleLike={handleLike}
+              showFavorites={showFavorites}
             />
           }
         />
-        <Route
-          path="/favorites"
-          element={
-            <CharacterDetail
-              likedCharacters={likedCharacters}
-              handleLike={handleLike}
-            />
-          }
-        />
+        <Route path="/details/:id" element={<CharacterDetail />} />
       </Routes>
     </Router>
   );

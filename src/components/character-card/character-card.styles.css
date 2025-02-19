@@ -32,9 +32,8 @@
 
 .character-card__info {
   display: flex;
-  justify-content: space-between; /* Alinea el nombre a la izquierda y el icono a la derecha */
+  justify-content: space-between;
   align-items: center;
-  background-color: black;
   background-color: black;
   padding: 30px 20px;
   position: absolute;
@@ -42,12 +41,12 @@
   left: 0;
   right: 0;
   border-radius: 0 0 12px 12px;
-  border-top: 4px solid red;
-  transition: background-color 0.5s ease, color 0.5s ease; /* 🔥 Transición suave */
+  border-top: 4px solid #ed7e82;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .character-card__info:hover {
-  background-color: red; /* Al pasar el ratón, cambia el fondo a rojo */
+  background-color: #ed7e82;
 }
 
 .character-card__name {
@@ -64,14 +63,7 @@
   transition: transform 0.3s ease;
 }
 
-.character-card__like svg {
+.character-card__like svg path {
   transition: fill 0.3s ease;
-}
-
-.character-card__like:hover {
-  transform: scale(1.1);
-}
-
-.character-card__info:hover .character-card__like svg path {
-  fill: white;
+  fill: #ed7e82;
 }

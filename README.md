@@ -1,70 +1,172 @@
-# Getting Started with Create React App
+# 🐉 **Dragon Ball Characters App**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicación web para explorar personajes de **Dragon Ball**. Los usuarios pueden:
 
-## Available Scripts
+✨ Buscar personajes
 
-In the project directory, you can run:
+🔍 Ver detalles completos
 
-### `npm start`
+❤️ Marcar personajes favoritos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📚 **Tabla de Contenidos**
 
-### `npm test`
+- [🚀 Instalación](#-instalación)
+- [⚡ Ejecución](#-ejecución)
+- [📂 Estructura del Proyecto](#-estructura-del-proyecto)
+- [🏗️ Arquitectura](#-arquitectura)
+- [🛠️ Tecnologías Utilizadas](#-tecnologías-utilizadas)
+- [🧪 Tests](#-tests)
+- [🤝 Contribuciones](#-contribuciones)
+- [📄 Licencia](#-licencia)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 **Instalación**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Sigue estos pasos para configurar el proyecto localmente:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. 🔗 **Clona el repositorio:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/SantiagoAOttolini/Dragon-Ball-Interview.git
+   ```
 
-### `npm run eject`
+2. 📂 **Navega al directorio del proyecto:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   cd Dragon\ ball\ interview 
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. 📦 **Instala las dependencias:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   Con **npm**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   npm install
+   ```
 
-## Learn More
+   O con **yarn**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   yarn install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## ⚡ **Ejecución**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 💻 **Modo Desarrollo**
 
-### Analyzing the Bundle Size
+Ejecuta el siguiente comando para iniciar la aplicación:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm start
+```
 
-### Making a Progressive Web App
+🔗 Abre [http://localhost:3000](http://localhost:3000) para ver la aplicación en el navegador.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 🚀 **Modo Producción**
 
-### Advanced Configuration
+Para crear una versión optimizada para producción:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm run build
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📂 **Estructura del Proyecto**
 
-### `npm run build` fails to minify
+```
+├── .gitignore
+├── .vscode/
+│   └── settings.json
+├── babel.config.js
+├── jest.config.js
+├── package.json
+├── public/
+│   ├── favicon.ico
+│   └── index.html
+├── README.md
+├── src/
+│   ├── __mocks__/
+│   │   └── fileMock.js
+│   ├── App.jsx
+│   ├── assets/
+│   │   ├── header.png
+│   │   └── like.svg
+│   ├── components/
+│   │   ├── character-card/
+│   │   ├── header/
+│   │   ├── pagination/
+│   │   └── search/
+│   ├── hooks/
+│   │   ├── useCharacterDetail.hook.js
+│   │   ├── useCharacters.hook.js
+│   │   ├── useLike.hook.js
+│   │   └── useSearch.hook.js
+│   ├── index.js
+│   ├── pages/
+│   │   ├── character-detail/
+│   │   └── character-home/
+│   ├── reportWebVitals.js
+│   ├── services/
+│   ├── styles.css
+│   └── utils/
+│       └── parse-ki.utils.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🏗️ **Arquitectura**
+
+La aplicación sigue una **arquitectura basada en componentes y hooks de React**:
+
+- 🧩 **src/components/**: Contiene componentes reutilizables como `CharacterCard`, `Header`, `Pagination` y `Search`.
+
+- 🪝 **src/hooks/**: Hooks personalizados para manejar la lógica de negocio:
+  - `useCharacters`: Obtiene la lista de personajes.
+  - `useCharacterDetail`: Muestra los detalles de un personaje.
+  - `useLike`: Administra personajes favoritos.
+  - `useSearch`: Maneja la lógica de búsqueda.
+
+- 📄 **src/pages/**: Páginas principales de la aplicación:
+  - `CharacterHome`: Página de inicio con el listado de personajes.
+  - `CharacterDetail`: Página con detalles específicos de un personaje.
+
+- 🌐 **src/services/**: Lógica de interacción con la API (**dragon-ball-api.services.js**).
+
+- 🛠️ **src/utils/**: Funciones de utilidad, como `parse-ki.utils.js`.
+
+---
+
+## 🛠️ **Tecnologías Utilizadas**
+
+- ⚛️ **React**: Librería para construir la interfaz de usuario.
+- 🌐 **React Router**: Gestión de rutas.
+- 🃏 **Jest**: Pruebas unitarias.
+- 🧬 **Babel**: Transpilador de JavaScript moderno.
+- 🎨 **CSS**: Estilos personalizados.
+
+---
+
+## 🧪 **Tests**
+
+Ejecuta las pruebas unitarias con:
+
+```bash
+npm test
+```
+
+```bash
+yarn jest
+```
+
+✔️ Las pruebas se encuentran en los directorios `__tests__`.
+
+---
+
+💬 **Hecho por [Santiago Ottolini](https://github.com/SantiagoAOttolini)** ✨
+

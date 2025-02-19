@@ -1,7 +1,7 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo } from "react";
 
 const useSearch = (characters = []) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filteredCharacters = useMemo(() => {
     return characters.filter((char) =>
