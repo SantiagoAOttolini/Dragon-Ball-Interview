@@ -1,5 +1,8 @@
+//Hooks
 import { useState, useEffect, useMemo } from "react";
+//Serivces
 import { getCharacterById } from "../services/dragon-ball-api.services";
+//Utils
 import { parseKi } from "../utils/parse-ki.utils";
 
 const useCharacterDetail = (id) => {

@@ -1,7 +1,11 @@
+//Vendors
 import React from "react";
+//Styles
 import "./header.styles.css";
+//Assets
 import headerImage from "../../assets/header.png";
 import likeImage from "../../assets/like.svg";
+//Hooks
 import { useNavigate } from "react-router-dom";
 
 function Header({ likedCount, onToggleFavorites, onResetCharacters }) {

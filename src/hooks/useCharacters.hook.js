@@ -1,4 +1,6 @@
+//Hooks
 import { useState, useEffect } from "react";
+//Services
 import { getCharacters } from "../services/dragon-ball-api.services";
 
 const useCharacters = (initialPage = 1, initialLimit = 50) => {

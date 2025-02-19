@@ -1,4 +1,6 @@
+//Vendors
 import React from "react";
+//Styles
 import "./pagination.styles.css";
 
 function Pagination({ page, totalPages, onNext, onPrev }) {

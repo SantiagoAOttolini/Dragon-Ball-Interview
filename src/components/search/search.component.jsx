@@ -1,4 +1,6 @@
+//Vendors
 import React from "react";
+//Styles
 import "./search.styles.css";
 
 function Search({ searchTerm, handleSearch, resultsCount }) {

@@ -1,7 +1,11 @@
+//Vendors
 import React from "react";
+//Styles
 import "./character-home.styles.css";
+//Hooks
 import useCharacters from "../../hooks/useCharacters.hook";
 import useSearch from "../../hooks/useSearch.hook";
+//Components
 import Search from "../../components/search/search.component";
 import CharacterCard from "../../components/character-card/character-card.component";
 import Pagination from "../../components/pagination/pagination.component";

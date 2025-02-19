@@ -1,7 +1,11 @@
+//Vendors
 import React from "react";
+//Styles
 import "./character-detail.styles.css";
+//Hooks
 import useCharacterDetail from "../../hooks/useCharacterDetail.hook";
 import { useParams } from "react-router-dom";
+//Components
 import CharacterCard from "../../components/character-card/character-card.component";
 
 function CharacterDetail() {

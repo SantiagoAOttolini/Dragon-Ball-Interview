@@ -1,4 +1,4 @@
-const CACHE_EXPIRATION = 24 * 60 * 60 * 1000; // 24 horas en milisegundos
+const CACHE_EXPIRATION = 24 * 60 * 60 * 1000;
 
 export const getCachedData = (key) => {
   const cachedItem = localStorage.getItem(key);

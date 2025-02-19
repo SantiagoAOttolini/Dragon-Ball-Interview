@@ -1,5 +1,8 @@
+//Vendors
 import React from "react";
+//Styles
 import "./character-card.styles.css";
+//Hooks
 import { useNavigate, useLocation } from "react-router-dom";
 
 function CharacterCard({

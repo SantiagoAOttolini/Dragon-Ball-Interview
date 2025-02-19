@@ -1,3 +1,4 @@
+//Hooks
 import { useState, useMemo } from "react";
 
 const useSearch = (characters = []) => {
