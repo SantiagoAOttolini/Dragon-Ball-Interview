@@ -12,9 +12,16 @@ export const parseKi = (ki) => {
     Septillion: 1e24,
   }
 
-  const [value, unit] = ki.split(' ')
-  const baseValue = parseFloat(value.replace(/,/g, '')) || 0
-  const multiplier = multipliers[unit] || 1
+  const parts = ki.trim().split(' ')
+  let baseValue = 0
+  let multiplier = 1
+
+  if (parts.length === 2) {
+    baseValue = Number(parts[0].replace(/,/g, '').replace(/\./g, '')) || 0
+    multiplier = multipliers[parts[1]] || 1
+  } else {
+    baseValue = Number(parts[0].replace(/\./g, '')) || 0
+  }
 
   return baseValue * multiplier
 }
