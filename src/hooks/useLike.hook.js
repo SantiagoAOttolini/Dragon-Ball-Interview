@@ -1,29 +1,29 @@
 //Hooks
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 const useLike = () => {
   const [likedCharacters, setLikedCharacters] = useState(() => {
-    const savedLikes = JSON.parse(localStorage.getItem("likedCharacters"));
-    return savedLikes || [];
-  });
+    const savedLikes = JSON.parse(localStorage.getItem('likedCharacters'))
+    return savedLikes || []
+  })
 
-  const [showFavorites, setShowFavorites] = useState(false);
+  const [showFavorites, setShowFavorites] = useState(false)
 
   useEffect(() => {
-    localStorage.setItem("likedCharacters", JSON.stringify(likedCharacters));
-  }, [likedCharacters]);
+    localStorage.setItem('likedCharacters', JSON.stringify(likedCharacters))
+  }, [likedCharacters])
 
   const handleLike = (character) => {
     setLikedCharacters((prev) => {
-      const isLiked = prev.some((liked) => liked.id === character.id);
+      const isLiked = prev.some((liked) => liked.id === character.id)
       return isLiked
         ? prev.filter((liked) => liked.id !== character.id)
-        : [...prev, character];
-    });
-  };
+        : [...prev, character]
+    })
+  }
 
-  const handleToggleFavorites = () => setShowFavorites((prev) => !prev);
-  const handleResetCharacters = () => setShowFavorites(false);
+  const handleToggleFavorites = () => setShowFavorites((prev) => !prev)
+  const handleResetCharacters = () => setShowFavorites(false)
 
   return {
     likedCharacters,
@@ -32,7 +32,7 @@ const useLike = () => {
     showFavorites,
     handleToggleFavorites,
     handleResetCharacters,
-  };
-};
+  }
+}
 
-export default useLike;
+export default useLike

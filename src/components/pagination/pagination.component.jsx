@@ -1,7 +1,7 @@
 //Vendors
-import React from "react";
+import React from 'react'
 //Styles
-import "./pagination.styles.css";
+import './pagination.styles.css'
 
 function Pagination({ page, totalPages, onNext, onPrev }) {
   return (
@@ -16,7 +16,7 @@ function Pagination({ page, totalPages, onNext, onPrev }) {
         Siguiente ➡️
       </button>
     </div>
-  );
+  )
 }
 
-export default Pagination;
+export default Pagination

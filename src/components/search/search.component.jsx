@@ -1,7 +1,7 @@
 //Vendors
-import React from "react";
+import React from 'react'
 //Styles
-import "./search.styles.css";
+import './search.styles.css'
 
 function Search({ searchTerm, handleSearch, resultsCount }) {
   return (
@@ -15,11 +15,11 @@ function Search({ searchTerm, handleSearch, resultsCount }) {
       />
       {resultsCount !== 0 && (
         <p className="search-results">
-          {resultsCount} {resultsCount === 1 ? "RESULTADO" : "RESULTADOS"}
+          {resultsCount} {resultsCount === 1 ? 'RESULTADO' : 'RESULTADOS'}
         </p>
       )}
     </div>
-  );
+  )
 }
 
-export default Search;
+export default Search

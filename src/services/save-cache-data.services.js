@@ -1,22 +1,22 @@
-const CACHE_EXPIRATION = 24 * 60 * 60 * 1000;
+const CACHE_EXPIRATION = 24 * 60 * 60 * 1000
 
 export const getCachedData = (key) => {
-  const cachedItem = localStorage.getItem(key);
-  if (!cachedItem) return null;
+  const cachedItem = localStorage.getItem(key)
+  if (!cachedItem) return null
 
-  const { data, timestamp } = JSON.parse(cachedItem);
+  const { data, timestamp } = JSON.parse(cachedItem)
   if (Date.now() - timestamp > CACHE_EXPIRATION) {
-    localStorage.removeItem(key);
-    return null;
+    localStorage.removeItem(key)
+    return null
   }
 
-  return data;
-};
+  return data
+}
 
 export const setCachedData = (key, data) => {
   const cachedItem = {
     data,
     timestamp: Date.now(),
-  };
-  localStorage.setItem(key, JSON.stringify(cachedItem));
-};
+  }
+  localStorage.setItem(key, JSON.stringify(cachedItem))
+}

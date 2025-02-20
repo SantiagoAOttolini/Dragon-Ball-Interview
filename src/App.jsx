@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import CharacterHome from "./pages/character-home/character-home.page";
-import CharacterDetail from "./pages/character-detail/character-detail.page";
-import Header from "./components/header/header.component";
-import useLike from "./hooks/useLike.hook";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import CharacterHome from './pages/character-home/character-home.page'
+import CharacterDetail from './pages/character-detail/character-detail.page'
+import Header from './components/header/header.component'
+import useLike from './hooks/useLike.hook'
 
 function App() {
   const {
@@ -12,7 +12,7 @@ function App() {
     showFavorites,
     handleToggleFavorites,
     handleResetCharacters,
-  } = useLike();
+  } = useLike()
 
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
@@ -35,7 +35,7 @@ function App() {
         <Route path="/details/:id" element={<CharacterDetail />} />
       </Routes>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

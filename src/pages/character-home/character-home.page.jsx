@@ -1,24 +1,24 @@
 //Vendors
-import React from "react";
+import React from 'react'
 //Styles
-import "./character-home.styles.css";
+import './character-home.styles.css'
 //Hooks
-import useCharacters from "../../hooks/useCharacters.hook";
-import useSearch from "../../hooks/useSearch.hook";
+import useCharacters from '../../hooks/useCharacters.hook'
+import useSearch from '../../hooks/useSearch.hook'
 //Components
-import Search from "../../components/search/search.component";
-import CharacterCard from "../../components/character-card/character-card.component";
-import Pagination from "../../components/pagination/pagination.component";
+import Search from '../../components/search/search.component'
+import CharacterCard from '../../components/character-card/character-card.component'
+import Pagination from '../../components/pagination/pagination.component'
 
 function CharacterHome({ likedCharacters, handleLike, showFavorites }) {
   const { characters, loading, page, totalPages, nextPage, prevPage } =
-    useCharacters(1, 50);
+    useCharacters(1, 50)
 
-  const sourceCharacters = showFavorites ? likedCharacters : characters;
+  const sourceCharacters = showFavorites ? likedCharacters : characters
   const { searchTerm, setSearchTerm, filteredCharacters } =
-    useSearch(sourceCharacters);
+    useSearch(sourceCharacters)
 
-  if (loading) return <p className="loading">🔄 Cargando personajes...</p>;
+  if (loading) return <p className="loading">🔄 Cargando personajes...</p>
 
   return (
     <div className="character-home">
@@ -32,7 +32,7 @@ function CharacterHome({ likedCharacters, handleLike, showFavorites }) {
         {filteredCharacters.map(({ id, name, image }) => {
           const isLiked = likedCharacters.some(
             (character) => character.id === id
-          );
+          )
           return (
             <CharacterCard
               key={id}
@@ -42,7 +42,7 @@ function CharacterHome({ likedCharacters, handleLike, showFavorites }) {
               handleLike={handleLike}
               isLiked={isLiked}
             />
-          );
+          )
         })}
       </div>
       {filteredCharacters.length > 0 && !showFavorites && (
@@ -54,7 +54,7 @@ function CharacterHome({ likedCharacters, handleLike, showFavorites }) {
         />
       )}
     </div>
-  );
+  )
 }
 
-export default CharacterHome;
+export default CharacterHome

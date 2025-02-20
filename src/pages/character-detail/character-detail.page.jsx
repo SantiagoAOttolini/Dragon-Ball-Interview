@@ -1,19 +1,19 @@
 //Vendors
-import React from "react";
+import React from 'react'
 //Styles
-import "./character-detail.styles.css";
+import './character-detail.styles.css'
 //Hooks
-import useCharacterDetail from "../../hooks/useCharacterDetail.hook";
-import { useParams } from "react-router-dom";
+import useCharacterDetail from '../../hooks/useCharacterDetail.hook'
+import { useParams } from 'react-router-dom'
 //Components
-import CharacterCard from "../../components/character-card/character-card.component";
+import CharacterCard from '../../components/character-card/character-card.component'
 
 function CharacterDetail() {
-  const { id } = useParams();
-  const { character, loading } = useCharacterDetail(id);
+  const { id } = useParams()
+  const { character, loading } = useCharacterDetail(id)
 
-  if (loading) return <p className="loading">Cargando detalles...</p>;
-  if (!character) return <p>No se encontró el personaje.</p>;
+  if (loading) return <p className="loading">Cargando detalles...</p>
+  if (!character) return <p>No se encontró el personaje.</p>
 
   return (
     <div className="character-detail">
@@ -52,7 +52,7 @@ function CharacterDetail() {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default CharacterDetail;
+export default CharacterDetail

@@ -18,6 +18,7 @@ Aplicación web para explorar personajes de **Dragon Ball**. Los usuarios pueden
 - [🏗️ Arquitectura](#-arquitectura)
 - [🛠️ Tecnologías Utilizadas](#-tecnologías-utilizadas)
 - [🧪 Tests](#-tests)
+- [🔍 Linting](#-linting)
 
 ---
 
@@ -34,7 +35,7 @@ Sigue estos pasos para configurar el proyecto localmente:
 2. 📂 **Navega al directorio del proyecto:**
 
    ```bash
-   cd Dragon\ ball\ interview 
+   cd Dragon\ ball\ interview
    ```
 
 3. 📦 **Instala las dependencias:**
@@ -125,12 +126,14 @@ La aplicación sigue una **arquitectura basada en componentes y hooks de React**
 - 🧩 **src/components/**: Contiene componentes reutilizables como `CharacterCard`, `Header`, `Pagination` y `Search`.
 
 - 🪝 **src/hooks/**: Hooks personalizados para manejar la lógica de negocio:
+
   - `useCharacters`: Obtiene la lista de personajes.
   - `useCharacterDetail`: Muestra los detalles de un personaje.
   - `useLike`: Administra personajes favoritos.
   - `useSearch`: Maneja la lógica de búsqueda.
 
 - 📄 **src/pages/**: Páginas principales de la aplicación:
+
   - `CharacterHome`: Página de inicio con el listado de personajes.
   - `CharacterDetail`: Página con detalles específicos de un personaje.
 
@@ -166,5 +169,16 @@ yarn jest
 
 ---
 
-💬 **Hecho por [Santiago Ottolini](https://github.com/SantiagoAOttolini)** ✨
+## 🔍 **Linting**
 
+Para ejecutar ESLint y verificar el código en busca de problemas de estilo y errores, usa el siguiente comando:
+
+```bash
+npm run lint
+```
+
+Este comando ejecutará ESLint en todo el proyecto y mostrará cualquier error o advertencia según las reglas configuradas.
+
+---
+
+💬 **Hecho por [Santiago Ottolini](https://github.com/SantiagoAOttolini)** ✨
