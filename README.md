@@ -2,6 +2,8 @@
 
 Segui este video para saber como usar la app: [Ver Video](https://www.loom.com/share/769eb2ae9f274c1093a812df9bafb9df?sid=d7f27a04-4af0-4bec-bb12-f0691a735d21)
 
+🚀 Accede a la pagina desde aqui: [Dragon Ball Z](https://dragonballzinditex.netlify.app/)
+
 Aplicación web para explorar personajes de **Dragon Ball**. Los usuarios pueden:
 
 ✨ Buscar personajes
