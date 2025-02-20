@@ -10,11 +10,13 @@ function Search({ searchTerm, handleSearch, resultsCount }) {
         type="text"
         value={searchTerm}
         onChange={(e) => handleSearch(e.target.value)}
-        placeholder="SEARCH A CHARACTER"
+        placeholder="BUSCA UN PERSONAJE"
         className="search-input"
       />
       {resultsCount !== 0 && (
-        <p className="search-results">{resultsCount} RESULTS</p>
+        <p className="search-results">
+          {resultsCount} {resultsCount === 1 ? "RESULTADO" : "RESULTADOS"}
+        </p>
       )}
     </div>
   );

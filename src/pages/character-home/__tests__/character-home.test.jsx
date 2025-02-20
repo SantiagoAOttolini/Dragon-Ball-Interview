@@ -85,7 +85,7 @@ describe("CharacterHome", () => {
         />
       </MemoryRouter>
     );
-    fireEvent.change(screen.getByPlaceholderText("SEARCH A CHARACTER"), {
+    fireEvent.change(screen.getByPlaceholderText("BUSCA UN PERSONAJE"), {
       target: { value: "Goku" },
     });
     expect(setSearchTerm).toHaveBeenCalledWith("Goku");

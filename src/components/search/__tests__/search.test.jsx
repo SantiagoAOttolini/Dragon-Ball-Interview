@@ -7,7 +7,7 @@ describe("Search", () => {
   test("renders search input", () => {
     render(<Search searchTerm="" handleSearch={jest.fn()} resultsCount={0} />);
     expect(
-      screen.getByPlaceholderText("SEARCH A CHARACTER")
+      screen.getByPlaceholderText("BUSCA UN PERSONAJE")
     ).toBeInTheDocument();
   });
 
@@ -16,7 +16,7 @@ describe("Search", () => {
     render(
       <Search searchTerm="" handleSearch={handleSearch} resultsCount={0} />
     );
-    fireEvent.change(screen.getByPlaceholderText("SEARCH A CHARACTER"), {
+    fireEvent.change(screen.getByPlaceholderText("BUSCA UN PERSONAJE"), {
       target: { value: "Goku" },
     });
     expect(handleSearch).toHaveBeenCalledWith("Goku");
@@ -24,11 +24,11 @@ describe("Search", () => {
 
   test("renders results count", () => {
     render(<Search searchTerm="" handleSearch={jest.fn()} resultsCount={5} />);
-    expect(screen.getByText("5 RESULTS")).toBeInTheDocument();
+    expect(screen.getByText("5 RESULTADOS")).toBeInTheDocument();
   });
 
   test("does not render results count when it is zero", () => {
     render(<Search searchTerm="" handleSearch={jest.fn()} resultsCount={0} />);
-    expect(screen.queryByText("0 RESULTS")).not.toBeInTheDocument();
+    expect(screen.queryByText("0 RESULTADOS")).not.toBeInTheDocument();
   });
 });

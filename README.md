@@ -18,8 +18,6 @@ Aplicación web para explorar personajes de **Dragon Ball**. Los usuarios pueden
 - [🏗️ Arquitectura](#-arquitectura)
 - [🛠️ Tecnologías Utilizadas](#-tecnologías-utilizadas)
 - [🧪 Tests](#-tests)
-- [🤝 Contribuciones](#-contribuciones)
-- [📄 Licencia](#-licencia)
 
 ---
 
