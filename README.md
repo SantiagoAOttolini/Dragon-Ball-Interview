@@ -141,6 +141,8 @@ La aplicación sigue una **arquitectura basada en componentes y hooks de React**
 
 - 🛠️ **src/utils/**: Funciones de utilidad, como `parse-ki.utils.js`.
 
+- 📜 **src/*/constants/**: Contiene archivos de constantes utilizadas en la aplicación.
+
 ---
 
 ## 🛠️ **Tecnologías Utilizadas**
